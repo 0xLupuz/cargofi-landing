@@ -204,11 +204,11 @@ export default function Landing() {
           <img src="/icon-192x192.png" alt="CargoFi" style={{ height: 40, width: 40, objectFit: 'contain' }} />
         </a>
         <div className="hide-mobile" style={{ display: 'flex', gap: 4 }}>
-          <a href="https://dispatch.cargofi.io" target="_blank" rel="noreferrer" className="nav-link">Dispatch</a>
           <a href="/transport"  className="nav-link">Transport</a>
+          <a href="https://dispatch.cargofi.io" target="_blank" rel="noreferrer" className="nav-link">Dispatch</a>
           <a href="/finance"    className="nav-link">Finance</a>
-          <a href="https://marketplace.cargofi.io" target="_blank" rel="noreferrer" className="nav-link">Marketplace</a>
           <a href="/roadmap"    className="nav-link">Roadmap</a>
+          <a href="https://marketplace.cargofi.io" target="_blank" rel="noreferrer" className="nav-link">Marketplace</a>
         </div>
         <a href="https://marketplace.cargofi.io" target="_blank" rel="noreferrer"
           style={{ fontSize: 13, fontWeight: 700, color: '#fff', textDecoration: 'none',
@@ -503,106 +503,6 @@ export default function Landing() {
                   WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{v}</div>
                 <div style={{ fontSize: 11, color: '#484f58', marginTop: 6,
                   textTransform: 'uppercase', letterSpacing: '0.08em' }}>{l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Roadmap */}
-      <section style={{ padding: 'clamp(80px,10vw,120px) clamp(16px,4vw,48px)' }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: G, textTransform: 'uppercase' }}>Roadmap</span>
-            <h2 style={{ fontSize: 'clamp(28px,4vw,44px)', fontWeight: 900, letterSpacing: '-1.5px', margin: '12px 0 0' }}>
-              Built in stages. Profitable from day one.
-            </h2>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-            {[
-              {
-                quarter: 'Q2 2026',
-                badge: 'Live on devnet',
-                badgeColor: G,
-                badgeBg: G3,
-                badgeBorder: G4,
-                title: 'CargoFi Finance — Invoice Factoring',
-                items: [
-                  'Dispatch platform + AI document parsing',
-                  'Oracle bridges invoices to Solana on-chain',
-                  'Investor marketplace — fund deals, earn yield',
-                  '3 Solana programs deployed on devnet',
-                ],
-                active: true,
-              },
-              {
-                quarter: 'Q3 2026',
-                badge: 'Next',
-                badgeColor: '#58a6ff',
-                badgeBg: 'rgba(88,166,255,0.1)',
-                badgeBorder: 'rgba(88,166,255,0.25)',
-                title: 'Mainnet Launch + CargoFi Transport',
-                items: [
-                  'Real USDC on Solana mainnet',
-                  'CargoFi LLC — MC authority active, first trucks operating',
-                  'First 5 carriers onboarded, cross-border routes USA–MX',
-                  'CargoFi México S. de R.L. de C.V. incorporated',
-                ],
-                active: false,
-              },
-              {
-                quarter: 'Q4 2026',
-                badge: 'Planned',
-                badgeColor: '#a78bfa',
-                badgeBg: 'rgba(167,139,250,0.1)',
-                badgeBorder: 'rgba(167,139,250,0.25)',
-                title: 'Truck Token Marketplace + Scale',
-                items: [
-                  'Fractional truck ownership on-chain (pending Reg D)',
-                  'CargoFi Pay — USDC settlement rails for carriers',
-                  'Expand to 10+ trucks, $1M+ monthly invoice volume',
-                  'Open to accredited investors globally',
-                ],
-                active: false,
-              },
-            ].map((phase, i, arr) => (
-              <div key={phase.quarter} style={{ display: 'flex', gap: 0 }}>
-                {/* Timeline */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 48, flexShrink: 0 }}>
-                  <div style={{
-                    width: 16, height: 16, borderRadius: '50%', flexShrink: 0, marginTop: 20,
-                    background: phase.active ? G : '#21262d',
-                    border: `2px solid ${phase.active ? G : '#30363d'}`,
-                    boxShadow: phase.active ? `0 0 12px ${G4}` : 'none',
-                  }}/>
-                  {i < arr.length - 1 && (
-                    <div style={{ width: 2, flex: 1, background: '#21262d', marginTop: 4, marginBottom: 4 }}/>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div style={{
-                  flex: 1, marginLeft: 20, marginBottom: i < arr.length - 1 ? 40 : 0,
-                  paddingBottom: i < arr.length - 1 ? 0 : 0,
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#484f58', fontFamily: 'monospace' }}>{phase.quarter}</span>
-                    <span style={{
-                      fontSize: 11, fontWeight: 700, padding: '2px 10px', borderRadius: 999,
-                      color: phase.badgeColor, background: phase.badgeBg, border: `1px solid ${phase.badgeBorder}`,
-                    }}>{phase.badge}</span>
-                  </div>
-                  <h3 style={{ margin: '0 0 12px', fontSize: 18, fontWeight: 700, color: '#f0f6fc' }}>{phase.title}</h3>
-                  <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 7 }}>
-                    {phase.items.map(item => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, color: '#8b949e', lineHeight: 1.5 }}>
-                        <span style={{ color: phase.active ? G : '#30363d', marginTop: 2, flexShrink: 0 }}>▸</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>
