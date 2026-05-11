@@ -208,6 +208,7 @@ export default function Landing() {
           <a href="/transport"  className="nav-link">Transport</a>
           <a href="/finance"    className="nav-link">Finance</a>
           <a href="https://marketplace.cargofi.io" target="_blank" rel="noreferrer" className="nav-link">Marketplace</a>
+          <a href="/roadmap"    className="nav-link">Roadmap</a>
         </div>
         <a href="https://marketplace.cargofi.io" target="_blank" rel="noreferrer"
           style={{ fontSize: 13, fontWeight: 700, color: '#fff', textDecoration: 'none',
